@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/apiteti" method="POST"> 
+        <!-- <form action="http//10.8.34.172:5000/apiteti" method="POST"></form> -->
+        <input type="hidden" value="ABC" name="token" id="">
+        <input type="submit" value="enviar"  id="">
+    </form>
+
+    <div>
+        {% if msg == 'SUCCESS'%}
+         <h1>Conexão realizada com sucesso</h1>
+        {%elif msg == 'FAILURE'%}
+        <h1>
+            Conexão não foi estabelecida
+        </h1>
+        {%endif%}
+    </div>
+    
+</body>
+</html>

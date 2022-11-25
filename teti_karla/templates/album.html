@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Albúm de fotos</title>
+  </head>
+  <body>
+    <h1>Album de foto</h1>
+    <form enctype="multipart/form-data" method="post" action="/upload">
+      {{ form.hidden_tag() }} {{ form.file }}
+      <input type="submit" name="enviar" value="Enviar" />
+    </form>
+  </body>
+</html>

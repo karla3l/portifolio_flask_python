@@ -1,0 +1,8 @@
+
+.ponteiro{
+        width: 10px;
+        height: 10px;
+        position:relative;
+        background-image: url("../img/fundo.jpg");
+        border: 2px solid #000;
+      }

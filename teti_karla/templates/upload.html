@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>upload</title>
+  </head>
+  <body>
+    <h1>Arquivos na pasta de uploads</h1>
+    <div id="image">
+      {% for file in files %}
+      <img src="../static/image/{{ file }}" width="400" height="400" />
+      <!-- <p>{{files}}</p> -->
+      {% endfor %}
+    </div>
+  </body>
+</html>

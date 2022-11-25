@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Calculadora Binaria</title>
+ 
+        <link rel="stylesheet" 
+              href=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+              integrity=
+"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
+              crossorigin="anonymous" />
+  
+        <style type="text/css">
+            .jumbotron {
+                width: 70%;
+                height: 100%;
+                margin: auto;
+                text-align: center;
+                background-color: rgb(255, 196, 0);
+            }
+  
+            #output {
+                border: 2px solid black;
+                min-height: 60px;
+                text-align: right;
+                font-weight: bold;
+                font-size: 20px;
+            }
+  
+            .btn {
+                min-width: 120px;
+                border: 2px solid black;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <div class="container" style="background-image: url(img/background.jpg)">
+            <div class="jumbotron">
+                <h1>Calculadora Binaria</h1>
+                <div id="output"></div>
+                <div class="container mt-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" 
+                                    class="btn btn-light" 
+                                    onclick="input('0')">0</button>
+                            <button type="button" 
+                                    class="btn btn-light" 
+                                    onclick="input('1')">1</button>
+                            <button type="button" 
+                                    class="btn btn-danger float-right ml-2" 
+                                    onclick="cls()">AC</button>
+                            <button type="button" 
+                                    class="btn btn-warning float-right" 
+                                    onclick="backspace()">Backspace</button>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <button type="button" 
+                                    class="btn btn-info" 
+                                    onclick="input('+')">+</button>
+                            <button type="button"
+                                    class="btn btn-info" 
+                                    onclick="input('-')">-</button>
+                            <button type="button" 
+                                    class="btn btn-info" 
+                                    onclick="input('*')">*</button>
+                            <button type="button" 
+                                    class="btn btn-info" 
+                                    onclick="input('/')">/</button>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <button type="button" 
+                                    class="btn btn-success" 
+                                    onclick="calcular()">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <script type="text/javascript">
+            var scr = ""; //declared as global variable
+  
+            function calculate() {
+                if (scr.indexOf("+") != -1) {
+                    // If + is present in the string
+                    // String obtained from scr is split
+                    var num = scr.split("+"); 
+                      
+                    // The splitted string stores in num array
+                    var x = parseInt(num[0], 2); 
+                    
+                    // The num[0] and num[1] are the two binary 
+                    // numbers resp
+                    var y = parseInt(num[1], 2); 
+                    var sum = x + y;
+                    var ans = sum.toString(2);
+                } else if (scr.indexOf("-") != -1) {
+                    
+                    // If - is present in the string
+                    var num = scr.split("-");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var sub = x - y;
+                    var ans = sub.toString(2);
+                } else if (scr.indexOf("*") != -1) {
+                     
+                    // If * is present in the string
+                    var num = scr.split("*");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var mul = x * y;
+                    var ans = mul.toString(2);
+                } else if (scr.indexOf("/") != -1) {
+                    
+                    // If / is present in the string
+                    var num = scr.split("/");
+                    var x = parseInt(num[0], 2);
+                    var y = parseInt(num[1], 2);
+                    var div = x / y;
+                    var ans = div.toString(2);
+                }
+                scr = ans;
+                document.getElementById("output").innerHTML = scr;
+            }
+  
+            function input(ch) {
+                scr += ch;
+                document.getElementById("output").innerHTML = scr;
+            }
+  
+            function backspace() {
+                var b = document.getElementById("output").innerHTML;
+                scr = b.substring(0, b.length - 1);
+                document.getElementById("output").innerHTML = scr;
+            }
+  
+            function cls() {
+                scr = "";
+                document.getElementById("output").innerHTML = scr;
+            }
+        </script>
+  
+        <!--jquery and popper.js cdn -->
+        <script src=
+"https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+                integrity=
+"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+                crossorigin="anonymous"></script>
+        <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
+                integrity=
+"sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" 
+                crossorigin="anonymous"></script>
+    </body>
+</html>

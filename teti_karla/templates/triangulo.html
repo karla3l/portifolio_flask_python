@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+</head>
+
+
+   <div>
+    <form method="POST" action="/triangulo">
+        <input type="text" name="ladoA" placeholder="Digite a medida do lado A">
+        <input type="text" name="ladoB" placeholder="Digite a medida do lado B">
+        <input type="text" name="ladoC" placeholder="Digite a medida do lado C">
+        <input type="submit" name="enviar" value="Enviar">  
+    </form>
+    <h2>Lado A</h2>
+    <p>{{ladoA}}</p>
+    <h2>Lado B</h2>
+    <p>{{ladoB}}</p>
+    <h2>Lado C</h2>
+    <p>{{ladoC}}</p>
+    <h2>Maior lado:</h2>
+    <p>{{ladoA, ladoB, ladoC}}</p>
+     
+
+</body>
+</html>
